@@ -6,6 +6,7 @@ import Works from '../../../Works/Works'
 import Blogs from '../../../Blogs/Blogs'
 import Testimonial from '../../../Testimonial/Testimonial'
 
+
 const Home = () => {
   return (
     <div>
@@ -16,6 +17,7 @@ const Home = () => {
             <Works></Works>
             <Blogs></Blogs>
             <Testimonial></Testimonial>
+           
 
     </div>
   )

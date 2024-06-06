@@ -7,9 +7,11 @@ import  { useContext, useState } from 'react';
 import {  useRef, useMemo } from 'react';
 import JoditEditor from 'jodit-react';
 import { AuthContext } from '../Providers/AuthProviders';
+import moment from 'moment';
 const Blogs = () => {
-    
+
     const {user,loading}=useContext(AuthContext)
+    const pRef=useRef(null)
     const editor = useRef(null);
 	const [content, setContent] = useState('');
     console.log(user?.email)
@@ -20,8 +22,9 @@ const Blogs = () => {
         e.preventDefault()
         const form=e.target
         const title=form.title.value
+        const date=pRef.current.innerText
         const email=user?.email
-        const totalpost={title,content,email}
+        const totalpost={title,content,email,date}
         console.log(totalpost)
         fetch('http://localhost:3000/blogs',{
             method:'POST',
@@ -72,6 +75,11 @@ const Blogs = () => {
 		/>
           </div>
 
+          <div className="mt-4">
+            
+          <p ref={pRef} className='hidden'>{moment().format('MMMM Do YYYY, h:mm:ss a')}</p>
+            
+          </div>
           <div className="mt-4">
             <button
               type="submit"

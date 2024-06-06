@@ -35,7 +35,7 @@ const Navbar = () => {
            
             <li><button onClick={handleSignout}>Logout</button></li>
            </>: <li><Link to='/login' >Login</Link></li>}
-        <li><a href='/signup'>Signup</a></li>
+        <li><a href='/register'>Register</a></li>
       </ul>
     </div>
   </div>
