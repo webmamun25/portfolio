@@ -2,15 +2,15 @@
 import React from 'react'
 
 const Test = ({testimonial}) => {
-    const {img,name,speech}=testimonial
+    const {image,name,speech}=testimonial
   return (
     <div>
           <blockquote className="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
         <div className="flex items-center gap-4">
           <img
             alt=""
-            src={img}
-            className="size-14 rounded-full object-cover"
+            src={image}
+            className="size-20  object-contain"
           />
 
           <div>

@@ -3,12 +3,12 @@ import Test from './Test'
 
 const Testimonial = () => {
     const [testimonial,setTestmonial]=useState([])
-    useEffect(()=>{
 
-        fetch('./testimonial.json')
-        .then(res=>res.json())
-        .then(data=>setTestmonial(data))
-    },[setTestmonial])
+    useEffect(() => {
+        fetch('http://localhost:8000/testimonial')
+            .then(res => res.json())
+            .then(data => setTestmonial(data))
+    }, [])
    
   return (
     <section className="bg-white">

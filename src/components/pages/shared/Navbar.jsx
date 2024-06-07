@@ -17,7 +17,9 @@ const Navbar = () => {
     <div className='glass'>
       <div className="navbar">
   <div className="navbar-start">
-    <img className='w-10' src="https://i.ibb.co/8rLCSG0/green-pink-square-with-green-background-green-square-with-circle-middle-removebg-preview.png" alt="" />
+  <a href="https://drive.google.com/file/d/1uQiXhfqA7UfGuH32GneDYIjJ9DMlxvMI/view?usp=drive_link" download="MyExampleDoc" target='_blank'>
+                  <button className='btn btn-accent px-3 py-3 w-48'>Download Resume</button>
+                </a>
   </div>
   <div className="navbar-center">
     <a className="btn btn-ghost text-xl">Mamun's Portfolio</a>
@@ -30,12 +32,13 @@ const Navbar = () => {
       <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
       <li><Link to='/'>Home</Link></li>
         <li><Link to='/blogs'>Blogs</Link></li>
+        <li><Link to='/feedback'>Add Feedback</Link></li>
         <li><Link to='/dashboard'>Dashboard</Link></li>
         {user?.email ? <>
            
             <li><button onClick={handleSignout}>Logout</button></li>
            </>: <li><Link to='/login' >Login</Link></li>}
-        <li><a href='/register'>Register</a></li>
+           <li><Link to='/register' >Register</Link></li>
       </ul>
     </div>
   </div>

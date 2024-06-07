@@ -5,6 +5,9 @@ import Educations from '../../../Educations/Educations'
 import Works from '../../../Works/Works'
 import Blogs from '../../../Blogs/Blogs'
 import Testimonial from '../../../Testimonial/Testimonial'
+import BlogsCard from '../../../BlogsCard/BlogsCard'
+import Contact from '../../../Contact/Contact'
+import Location from '../../../Location/Location'
 
 
 const Home = () => {
@@ -15,8 +18,10 @@ const Home = () => {
             <Skills></Skills>
             <Educations></Educations>
             <Works></Works>
-            <Blogs></Blogs>
+            <BlogsCard></BlogsCard>
             <Testimonial></Testimonial>
+            <Contact></Contact>
+            <Location></Location>
            
 
     </div>

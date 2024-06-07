@@ -4,9 +4,11 @@ import Sidebar from '../pages/shared/Sidebar'
 
 const DashboardLayout = () => {
   return (
-    <div className='flex gap-3'>
-        <Sidebar></Sidebar>   
-        <Outlet></Outlet>
+    <div className='grid grid-cols-4 gap-3'>
+      <div ><Sidebar></Sidebar>   </div>
+      <div className='col-span-3'><Outlet></Outlet></div>
+        
+        
     </div>
   )
 }

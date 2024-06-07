@@ -26,7 +26,7 @@ const Blogs = () => {
         const email=user?.email
         const totalpost={title,content,email,date}
         console.log(totalpost)
-        fetch('http://localhost:3000/blogs',{
+        fetch('http://localhost:8000/blogs',{
             method:'POST',
             headers:{
               "Content-Type": "application/json",
@@ -83,7 +83,7 @@ const Blogs = () => {
           <div className="mt-4">
             <button
               type="submit"
-              className="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto"
+              className="inline-block w-full rounded-lg btn btn-accent px-5 py-3 font-medium text-black sm:w-auto"
             >
               ADD
             </button>
