@@ -14,7 +14,7 @@ const Testimonial = () => {
             setTestmonial(data)
             setIsLoading(false);
           })
-        },5000)
+        },100)
     }, [])
    
    

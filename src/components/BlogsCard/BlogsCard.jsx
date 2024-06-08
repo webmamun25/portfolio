@@ -16,7 +16,7 @@ const BlogsCard = () => {
             setBlogscard(data)
             setIsLoading(false);
           })
-        },4000)
+        },2500)
     }, [])
  
   return (
