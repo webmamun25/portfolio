@@ -17,7 +17,7 @@ const Navbar = () => {
     <div className='glass'>
       <div className="navbar">
   <div className="navbar-start">
-  <a href="https://drive.google.com/file/d/1uQiXhfqA7UfGuH32GneDYIjJ9DMlxvMI/view?usp=drive_link" download="MyExampleDoc" target='_blank'>
+  <a href="https://drive.google.com/file/d/12JFv4wjMzFviNL0cevy0GPENZh60x78a/view?usp=sharing" download="MyExampleDoc" target='_blank'>
                   <button className='btn btn-accent px-3 py-3 w-48'>Download Resume</button>
                 </a>
   </div>

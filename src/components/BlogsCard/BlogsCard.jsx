@@ -1,14 +1,22 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Dangeroushtml from './Dangeroushtml'
 import { Link } from 'react-router-dom'
+import { AuthContext } from '../Providers/AuthProviders'
 
 const BlogsCard = () => {
     const[blogscard,setBlogscard]=useState([])
+    const [isLoading, setIsLoading] = useState(false);
+
     useEffect(()=>{
-        fetch('http://localhost:8000/blogs')
+      setIsLoading(true);
+        fetch('https://portfolio-server-theta-eosin.vercel.app/blogs')
         .then(res=>res.json())
-        .then(data=>setBlogscard(data))
+        .then(data=>{
+          setBlogscard(data)
+          setIsLoading(false);
+        })
     },[])
+ 
   return (
    <div>
        <div className='text-center mt-3 mb-4'>
@@ -17,7 +25,9 @@ const BlogsCard = () => {
         </div>
    <div className='grid grid-cols-3 px-4 py-4 mb-4 mt-4 gap-4'>
         
-        {blogscard.map((blogs,i)=><div 
+    {
+      isLoading ? <p>Loading...</p>:<>
+       {blogscard?.map((blogs,i)=><div 
         key={i}
         className="flex flex-col bg-white border shadow-sm rounded-xl p-4 md:p-5 dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
   <h3 className="text-lg font-bold text-gray-800 dark:text-white">
@@ -40,6 +50,10 @@ const BlogsCard = () => {
     </svg>
   </Link>
 </div>)}
+      </>
+    }
+
+       
 
     </div>
    </div>

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react'
 
 const AddFeedback = () => {
@@ -8,7 +9,7 @@ const AddFeedback = () => {
         const image=form.image.value 
         const speech=form.speech.value 
         const data={name,image,speech}
-        fetch('http://localhost:8000/testimonial',{
+        fetch('https://portfolio-server-theta-eosin.vercel.app/testimonial',{
             method: "POST", 
             headers: {
               "Content-Type": "application/json",

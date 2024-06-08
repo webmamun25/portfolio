@@ -9,7 +9,7 @@ const Addskills = () => {
     const percentage=form.percentage.value 
     const data={logo,percentage}
     console.log(data)
-    fetch('http://localhost:8000/skills',{
+    fetch('https://portfolio-server-theta-eosin.vercel.app/skills',{
       method: "POST", 
       headers: {
         "Content-Type": "application/json",

@@ -9,7 +9,7 @@ const AddWorks = () => {
         const image=form.image.value 
         const link=form.link.value 
         const data={image,link}
-        fetch('http://localhost:8000/addwork',{
+        fetch('https://portfolio-server-theta-eosin.vercel.app/addwork',{
             method: "POST", 
             headers: {
               "Content-Type": "application/json",

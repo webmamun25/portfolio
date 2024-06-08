@@ -10,7 +10,7 @@ const sendMessage=(e)=>{
   const message=form.message.value 
 
   const mail={name,email,subject,message}
-  fetch('http://localhost:8000/mail',{
+  fetch('https://portfolio-server-theta-eosin.vercel.app/mail',{
     method:'POST',
     headers:{
       "Content-Type": "application/json",

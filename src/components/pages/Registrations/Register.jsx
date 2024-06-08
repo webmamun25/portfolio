@@ -18,7 +18,7 @@ const Register = () => {
         .then(result=>{
             const user=result.user 
             console.log(user)
-            fetch('http://localhost:8000/users',{
+            fetch('https://portfolio-server-theta-eosin.vercel.app/users',{
           method:'POST',
           headers:{
             "Content-Type": "application/json",

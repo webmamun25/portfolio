@@ -67,7 +67,7 @@ const router = createBrowserRouter([
         {
           index:true
           ,
-          element: <AdminRoutes><Dashboard></Dashboard></AdminRoutes> 
+          element: <Dashboard></Dashboard>
         },
         {
           path:"allblogs"
@@ -79,7 +79,7 @@ const router = createBrowserRouter([
           path:"blogs/:id"
           ,
           element:<BlogsDetail></BlogsDetail>,
-          loader:({params})=>fetch(`http://localhost:8000/blogs/${params.id}`)
+          loader:({params})=>fetch(`https://portfolio-server-theta-eosin.vercel.app/blogs/${params.id}`)
         },
         {
           path:"addskills"

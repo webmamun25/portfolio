@@ -26,7 +26,7 @@ const Blogs = () => {
         const email=user?.email
         const totalpost={title,content,email,date}
         console.log(totalpost)
-        fetch('http://localhost:8000/blogs',{
+        fetch('https://portfolio-server-theta-eosin.vercel.app/blogs',{
             method:'POST',
             headers:{
               "Content-Type": "application/json",

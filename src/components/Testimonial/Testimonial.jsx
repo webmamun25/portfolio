@@ -1,14 +1,22 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Test from './Test'
+import { AuthContext } from '../Providers/AuthProviders'
 
 const Testimonial = () => {
     const [testimonial,setTestmonial]=useState([])
-
+    const [isLoading, setIsLoading] = useState(false);
     useEffect(() => {
-        fetch('http://localhost:8000/testimonial')
-            .then(res => res.json())
-            .then(data => setTestmonial(data))
+      setIsLoading(true);
+        setTimeout(()=>{
+          fetch('https://portfolio-server-theta-eosin.vercel.app/testimonial')
+          .then(res => res.json())
+          .then(data =>{ 
+            setTestmonial(data)
+            setIsLoading(false);
+          })
+        },3000)
     }, [])
+   
    
   return (
     <section className="bg-white">
@@ -19,13 +27,17 @@ const Testimonial = () => {
 
     <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">
     
-
-     {
-      testimonial.map((testi,i)=><Test
+    {
+      isLoading ? <p>Loading...</p>:<>
+       {
+      testimonial?.map((testi,i)=><Test
       key={i}
       testimonial={testi}
       ></Test>)
      }
+      </>
+    }
+    
 
      
     </div>

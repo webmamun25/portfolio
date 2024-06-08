@@ -1,13 +1,27 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { FaFacebook } from 'react-icons/fa'
+import { AuthContext } from '../Providers/AuthProviders'
 
 const Skills = () => {
     const [skills,setSkills]=useState([])
+    const [isLoading, setIsLoading] = useState(false);
+
     useEffect(() => {
-        fetch('http://localhost:8000/skills')
+        setIsLoading(true);
+        fetch('https://portfolio-server-theta-eosin.vercel.app/skills')
             .then(res => res.json())
-            .then(data => setSkills(data))
+            .then(data => {
+                setSkills(data)
+                setIsLoading(false);
+            }
+                
+                
+        
+        )
     }, [])
+   
+   
+   
     return (
         <div className='h-[30%] mt-4'>
             <span className="flex items-center">
@@ -18,12 +32,12 @@ const Skills = () => {
 
             <div className="grid grid-cols-4">
 
-            {
-                skills.map((skill,i)=><div key={i}
+            {isLoading ? <p>Loading...</p> : <>  {
+                skills?.map((skill,i)=><div key={i}
                  className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
                 <div className="grid grid-cols-2 row-gap-8 md:grid-cols-1">
                     <div className="text-center">
-                        <img className='w-20 mx-auto' src={skill.logo} alt="" />
+                        <img className='w-20 mx-auto' src={skill?.logo} alt="" />
                         <p className="text-sm mt-4 text-center font-medium tracking-widest text-gray-800 uppercase lg:text-base">
                             <div className='w-[50%] mx-auto'>
                                 <span id="ProgressLabel" className="sr-only">Loading</span>
@@ -47,7 +61,12 @@ const Skills = () => {
                 </div>
             </div>
                 )
-            }
+            }</>}
+      
+           
+          
+            
+            
             </div>
 
             

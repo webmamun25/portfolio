@@ -3,14 +3,14 @@ import React, { useEffect, useState } from 'react'
 const Mail = () => {
     const [mails,setMails]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:8000/mail')
+        fetch('https://portfolio-server-theta-eosin.vercel.app/mail')
         .then(res=>res.json())
         .then(data=>setMails(data))
-    },[])
+    },[setMails])
 
   return (
     <div>
-        {mails.map((mail,i)=><a key={i}
+        {mails?.map((mail,i)=><a key={i}
   href="#"
   className="relative block overflow-hidden rounded-lg border border-gray-100 p-4 sm:p-6 lg:p-8"
 >
