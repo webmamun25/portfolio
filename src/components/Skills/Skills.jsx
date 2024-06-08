@@ -8,17 +8,15 @@ const Skills = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        fetch('https://portfolio-server-theta-eosin.vercel.app/skills')
+          setTimeout(()=>{
+            fetch('https://portfolio-server-theta-eosin.vercel.app/skills')
             .then(res => res.json())
-            .then(data => {
-                setSkills(data)
-                setIsLoading(false);
-            }
-                
-                
-        
-        )
-    }, [])
+            .then(data =>{ 
+              setSkills(data)
+              setIsLoading(false);
+            })
+          },1000)
+      }, [])
    
    
    

@@ -9,12 +9,14 @@ const Works = () => {
   const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     setIsLoading(true);
-    fetch('https://portfolio-server-theta-eosin.vercel.app/addwork')
-      .then(res => res.json())
-      .then(data =>{ 
-        setWorks(data)
-        setIsLoading(false);
-      })
+      setTimeout(()=>{
+        fetch('https://portfolio-server-theta-eosin.vercel.app/addwork')
+        .then(res => res.json())
+        .then(data =>{ 
+          setWorks(data)
+          setIsLoading(false);
+        })
+      },3000)
   }, [])
 
   

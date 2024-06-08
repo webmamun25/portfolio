@@ -7,15 +7,17 @@ const BlogsCard = () => {
     const[blogscard,setBlogscard]=useState([])
     const [isLoading, setIsLoading] = useState(false);
 
-    useEffect(()=>{
+    useEffect(() => {
       setIsLoading(true);
-        fetch('https://portfolio-server-theta-eosin.vercel.app/blogs')
-        .then(res=>res.json())
-        .then(data=>{
-          setBlogscard(data)
-          setIsLoading(false);
-        })
-    },[])
+        setTimeout(()=>{
+          fetch('https://portfolio-server-theta-eosin.vercel.app/blogs')
+          .then(res => res.json())
+          .then(data =>{ 
+            setBlogscard(data)
+            setIsLoading(false);
+          })
+        },4000)
+    }, [])
  
   return (
    <div>
