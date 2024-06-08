@@ -4,7 +4,7 @@ import Dangeroushtml from './Dangeroushtml'
 
 const BlogsDetail = () => {
     const blogsItem=useLoaderData()
-    console.log(blogsItem)
+   
   return (
     <div>
         <main className="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900 antialiased">

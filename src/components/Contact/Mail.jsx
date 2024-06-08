@@ -2,15 +2,27 @@ import React, { useEffect, useState } from 'react'
 
 const Mail = () => {
     const [mails,setMails]=useState([])
-    useEffect(()=>{
-        fetch('https://portfolio-server-theta-eosin.vercel.app/mail')
-        .then(res=>res.json())
-        .then(data=>setMails(data))
-    },[setMails])
+   
+
+    const [isLoading, setIsLoading] = useState(false);
+    useEffect(() => {
+      setIsLoading(true);
+        setTimeout(()=>{
+          fetch('https://portfolio-server-theta-eosin.vercel.app/mail')
+          .then(res => res.json())
+          .then(data =>{ 
+            setMails(data)
+            setIsLoading(false);
+          })
+        },100)
+    }, [])
 
   return (
     <div>
-        {mails?.map((mail,i)=><a key={i}
+{
+isLoading ? <span className="loading loading-ball loading-lg text-center"></span>:<>
+
+{mails?.map((mail,i)=><a key={i}
   href="#"
   className="relative block overflow-hidden rounded-lg border border-gray-100 p-4 sm:p-6 lg:p-8"
 >
@@ -39,6 +51,10 @@ const Mail = () => {
 
   
 </a>)}
+</>
+}
+
+       
         
     </div>
   )

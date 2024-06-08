@@ -30,7 +30,7 @@ const Works = () => {
       <div className="grid grid-cols-3 px-4 py-16 gap-6 mb-4 mt-4" >
 
         {
-          isLoading ? <p>Loading...</p>:<>
+          isLoading ? <span className="loading loading-ball loading-lg text-center"></span>:<>
           {
           works?.map((work,i)=><div
           key={i}

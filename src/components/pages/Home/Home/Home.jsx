@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Banner from './Banner'
 import Skills from '../../../Skills/Skills'
 import Educations from '../../../Educations/Educations'
@@ -11,6 +11,7 @@ import Location from '../../../Location/Location'
 
 
 const Home = () => {
+ 
   return (
     <div>
   

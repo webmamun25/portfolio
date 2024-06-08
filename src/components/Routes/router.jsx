@@ -55,8 +55,13 @@ const router = createBrowserRouter([
           path:'/feedback'
           ,
           element:<AddFeedback></AddFeedback>
+        },
+        {
+          path:"/blogs/:id"
+          ,
+          element:<BlogsDetail></BlogsDetail>,
+          loader:({params})=>fetch(`https://portfolio-server-theta-eosin.vercel.app/blogs/${params.id}`)
         }
-        
       
       ]
     },
@@ -75,12 +80,7 @@ const router = createBrowserRouter([
           element:<BlogsCard></BlogsCard>
         },
       
-        {
-          path:"blogs/:id"
-          ,
-          element:<BlogsDetail></BlogsDetail>,
-          loader:({params})=>fetch(`https://portfolio-server-theta-eosin.vercel.app/blogs/${params.id}`)
-        },
+      
         {
           path:"addskills"
           ,

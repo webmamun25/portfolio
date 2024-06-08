@@ -9,14 +9,19 @@ const Sidebar = () => {
   const [mails,setMails]=useState([])
   const [testimonial,setTestimonial]=useState([])
   useEffect(()=>{
-    fetch('https://portfolio-server-theta-eosin.vercel.app/mail')
+    setTimeout(()=>{
+      fetch('https://portfolio-server-theta-eosin.vercel.app/mail')
     .then(res => res.json())
     .then(data => setMails(data))
+    },2000)
   },[])
   useEffect(()=>{
-    fetch('https://portfolio-server-theta-eosin.vercel.app/testimonial')
-    .then(res => res.json())
-    .then(data => setTestimonial(data))
+    setTimeout(() => {
+      fetch('https://portfolio-server-theta-eosin.vercel.app/testimonial')
+      .then(res => res.json())
+      .then(data => setTestimonial(data))
+    }, 500);
+   
   },[])
 
   return (
