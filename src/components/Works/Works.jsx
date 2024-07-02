@@ -16,7 +16,7 @@ const Works = () => {
           setWorks(data)
           setIsLoading(false);
         })
-      },3000)
+      },300)
   }, [])
 
   
@@ -27,14 +27,14 @@ const Works = () => {
         <span className='text-sm'>Recent Projects</span>
         <h3 className='font-bold text-4xl'>My Portfolio</h3>
       </div>
-      <div className="grid grid-cols-3 px-4 py-16 gap-6 mb-4 mt-4" >
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4" >
 
         {
           isLoading ? <span className="loading loading-ball loading-lg text-center"></span>:<>
           {
-          works?.map((work,i)=><div
+          works.slice(0,3)?.map((work,i)=><div
           key={i}
-          className="card w-96 bg-base-100 shadow-xl image-full">
+          className="card ;g:w-96 bg-base-100 shadow-xl image-full">
           <figure><img src={work?.image} alt="Shoes" /></figure>
           <div className="card-body flex justify-center items-center">
 

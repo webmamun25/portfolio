@@ -23,6 +23,8 @@ import AddFeedback from "../Testimonial/AddFeedback";
 import AddWorks from "../Works/AddWorks";
 import Testimonial from "../Testimonial/Testimonial";
 import Mail from "../Contact/Mail";
+import PrivateRoutes from "./PrivateRoute";
+
 
 
 
@@ -59,7 +61,7 @@ const router = createBrowserRouter([
         {
           path:"/blogs/:id"
           ,
-          element:<BlogsDetail></BlogsDetail>,
+          element:<PrivateRoutes><BlogsDetail></BlogsDetail></PrivateRoutes>,
           loader:({params})=>fetch(`https://portfolio-server-theta-eosin.vercel.app/blogs/${params.id}`)
         }
       
